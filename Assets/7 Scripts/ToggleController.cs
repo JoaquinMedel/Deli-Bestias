@@ -85,7 +85,7 @@ public class ToggleController : MonoBehaviour
 
 	public void Toggle(bool toggleStatus)
 	{
-		if(!onIcon.active || !offIcon.active)
+		//if(!onIcon.active || !offIcon.active) CHUPALO GARY
 		{
 			onIcon.SetActive(true);
 			offIcon.SetActive(true);
