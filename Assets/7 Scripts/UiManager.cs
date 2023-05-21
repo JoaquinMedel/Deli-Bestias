@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class UIManager : MonoBehaviour
+public class UiManager : MonoBehaviour
 {
     public RectTransform panelController, options;
 
