@@ -4,22 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using UnityEditor;
 
-public class UiManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public RectTransform flappyBird;
-    public CanvasGroup barButtom;
-    public GameObject bloqBarra;
+    public RectTransform panelController, options;
 
-    public void chooseGame(float posX)
+    public void ChoosePanel(float posX)
     {
-        flappyBird.DOAnchorPos(new Vector2(-4000, 0), 0f);
-        barButtom.DOFade(0, 0f);
-        bloqBarra.SetActive(false);
+        panelController.DOAnchorPosX(posX, .25f);
     }
-    
-    
 
+    private void Start()
+    {
+        ChoosePanel(0);
+    }
+
+    public void Options()
+    {
+        options.DOAnchorPos(new Vector2(0, 0), 0.40f);
+    }
+
+    public void CloseOptions()
+    {
+        options.DOAnchorPos(new Vector2(0, 820), 0.40f);
+    }
 }
-
