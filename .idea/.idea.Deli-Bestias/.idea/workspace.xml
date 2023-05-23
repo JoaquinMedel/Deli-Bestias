@@ -3,23 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="65e216fe-50a2-48c5-967a-6c9a53cbb198" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Deli-Bestias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Deli-Bestias/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/1 Salas.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/1 Salas.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/2 GachaMachine.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/2 GachaMachine.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/3 Barras.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/3 Barras.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/Flappy Bird.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/Flappy Bird.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/Testing.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/Testing.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/7 Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/7 Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/GuiaObs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/GuiaObs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/CoinCollector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/CoinCollector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/FlappyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/FlappyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1 Scenes/2SpaceBeast.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1 Scenes/2SpaceBeast.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/ManagerEscenas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiniJuegos/Flappy Bird/Scripts/ManagerEscenas.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +90,7 @@
       <workItem from="1684640156396" duration="400000" />
       <workItem from="1684712807161" duration="966000" />
       <workItem from="1684795912765" duration="655000" />
-      <workItem from="1684796657039" duration="11270000" />
+      <workItem from="1684796657039" duration="13632000" />
     </task>
     <servers />
   </component>
