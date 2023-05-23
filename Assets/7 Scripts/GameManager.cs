@@ -3,43 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int coins;
-    public TMP_Text coinsText;
+    private static GameManager instance;
+    private int points;
+    private int pointsMinigame;
+    private bool firstPlay = true;
+    private int _pointsMinigame = 0;
 
-    // Con esto se agregan las monedas
-    public void AddCoins(int amount)
+    private void Awake()
     {
-        coins += amount;
-        PlayerPrefs.SetInt("Coins", coins); // Esto se usa para guardar el valor de las monedas
-        UpdateCoinsText();
-    }
-
-    // Con esto obtenemos la cantidad de monedas
-    public int GetCoins()
-    {
-        return coins;
-    }
-
-    // Se inician las monedas que se guardaron
-    private void Start()
-    {
-        if (PlayerPrefs.HasKey("Coins"))
+        if (instance == null)
         {
-            coins = PlayerPrefs.GetInt("Coins");
+            instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+            
+            if (!SceneManager.GetSceneByName("0Null").isLoaded)
+            {
+                SceneManager.LoadScene("0Null" , LoadSceneMode.Additive);
+            }
         }
         else
         {
-            coins = 0;
+            Destroy(gameObject);
         }
-
-        UpdateCoinsText();
     }
-
-    private void UpdateCoinsText()
+    
+    public void AddPoints()
     {
-        coinsText.text = coins.ToString(); // Actualizar el texto con la cantidad de monedas
+        points += _pointsMinigame;
+        _pointsMinigame = 0;
     }
+
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
+    public int Points
+    {
+        get { return points + GameManager.instance.pointsMinigame; }
+        set { points = value; }
+    }
+
+    public int PointsMinigame
+
+    {
+        get { return pointsMinigame; }
+        set { pointsMinigame = value; }
+    }
+
+    public bool FirstPlay
+    {
+        get { return firstPlay; }
+        set { firstPlay = value; }
+    }
+
+    public void ResetPointsMinigame()
+    {
+        pointsMinigame = 0;
+    }
+
+    public int PointsMinijuegos { get; set; }
 }

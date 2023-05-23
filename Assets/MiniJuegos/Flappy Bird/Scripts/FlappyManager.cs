@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FlappyManager : MonoBehaviour
 {
-    public int coinsEarnedInMinigame;
     private GameManager gameManager0;
 
 
@@ -13,10 +12,4 @@ public class FlappyManager : MonoBehaviour
     {
         gameManager0 = FindObjectOfType<GameManager>();
     }
-
-    public void AddCoinsToGame()
-    {
-        gameManager0.AddCoins(coinsEarnedInMinigame);
-    }
-
 }
