@@ -8,7 +8,8 @@ public class ChangeCamera : MonoBehaviour
 {
 
     public CinemachineVirtualCamera[] cameras;
-    private int index = 0;
+
+    public float blendTime = 0.5f;
     private void Start()
     {
        cameras[0].gameObject.SetActive(true);
@@ -25,6 +26,8 @@ public class ChangeCamera : MonoBehaviour
         cameras[2].gameObject.SetActive(false);
         cameras[3].gameObject.SetActive(true);
         cameras[4].gameObject.SetActive(false);
+        
+        StartCoroutine(BlendCamera(cameras[3]));
     }
 
     public void Minijuegos()
@@ -34,6 +37,8 @@ public class ChangeCamera : MonoBehaviour
         cameras[2].gameObject.SetActive(true);
         cameras[3].gameObject.SetActive(false);
         cameras[4].gameObject.SetActive(false);
+
+        StartCoroutine(BlendCamera(cameras[2]));
     }
 
     public void Gacha()
@@ -43,6 +48,8 @@ public class ChangeCamera : MonoBehaviour
         cameras[2].gameObject.SetActive(false);
         cameras[3].gameObject.SetActive(false);
         cameras[4].gameObject.SetActive(false);
+
+        StartCoroutine(BlendCamera(cameras[1]));
     }
 
     public void Clothes()
@@ -52,6 +59,8 @@ public class ChangeCamera : MonoBehaviour
         cameras[2].gameObject.SetActive(false);
         cameras[3].gameObject.SetActive(false);
         cameras[4].gameObject.SetActive(true);
+
+        StartCoroutine(BlendCamera(cameras[4]));
     }
 
     public void Inicio()
@@ -61,6 +70,41 @@ public class ChangeCamera : MonoBehaviour
         cameras[2].gameObject.SetActive(false);
         cameras[3].gameObject.SetActive(false);
         cameras[4].gameObject.SetActive(false);
+
+        StartCoroutine(BlendCamera(cameras[0]));
     }
-    
+
+    private IEnumerator BlendCamera(CinemachineVirtualCamera targetCamera)
+    {
+        CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
+
+        if (brain != null)
+        {
+            CinemachineVirtualCamera currentCamera = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+
+            if (currentCamera != null && currentCamera != targetCamera)
+            {
+                currentCamera.Priority = 0;
+                targetCamera.Priority = 1;
+
+                float elapsedTime = 0;
+                float currentBlendTime = blendTime;
+
+                while (elapsedTime < currentBlendTime)
+                {
+                    elapsedTime += Time.deltaTime;
+                    float t = Mathf.Clamp01(elapsedTime / currentBlendTime);
+
+                    brain.m_DefaultBlend.m_Time = t;
+
+                    yield return null;
+                }
+
+                currentCamera.gameObject.SetActive(false);
+            }
+        }
+
+        yield return null;
+    }
+
 }
